@@ -127,7 +127,7 @@
                                     <img class="img-fluid" src="img/{{$item['image']}}" alt="service image">
                                     {{-- @if (route('login')) --}}
                                     <div class="hidden courses-overlay">
-                                        <a class="btn btn-outline-primary border-2" href="/services}}">Read more</a> 
+                                        <a class="btn btn-outline-primary border-2" href="/services">Read more</a> 
                                     </div>
                                     {{-- @endif --}}
                                 </div>
