@@ -16,11 +16,11 @@ class Image extends BaseType
 
             $path = $this->slug.DIRECTORY_SEPARATOR.date('FY').DIRECTORY_SEPARATOR;
 
-            $filename = $this->generateFileName($file, $path);
+            $filename = $file->getClientOriginalName();
 
             $image = InterventionImage::make($file)->orientate();
 
-            $fullPath = $path.$filename.'.'.$file->getClientOriginalExtension();
+            $fullPath = $path.$filename;
 
             $resize_width = null;
             $resize_height = null;

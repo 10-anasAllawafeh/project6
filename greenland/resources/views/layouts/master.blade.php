@@ -87,13 +87,13 @@
             </div>
             @if (Route::has('login'))
             @auth
-            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+            <div class="hidden fixed top-0 px-6 py-4 sm:block ">
+                <a href="{{ url('/home') }}" class="nav-item nav-link"><i class="fa-solid fa-user text-primary mx-3 " style="font-size: 28px"></i></a>
             </div>
             @else
                 {{-- <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a> --}}
             <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                <a href="{{ route('login') }}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get Started<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="{{ route('login') }}" class="btn btn-primary pt-4 px-lg-5 d-none d-lg-block">Join Us<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
 
                 {{-- @if (Route::has('register'))
@@ -128,7 +128,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-light mb-4">Newsletter</h4>
-                    <form action="form" method="post">
+                    <form action="{{url('/news')}}" method="post">
                         <div class="input-group">
                             <input type="text" class="form-control p-3 border-0" placeholder="Your Email Address">
                             <button class="btn btn-primary">Sign Up</button>
