@@ -12,7 +12,7 @@ class LoginTest extends TestCase
              ->type('admin@admin.com', 'email')
              ->type('password', 'password')
              ->press(__('voyager::generic.login'))
-             ->seePageIs(route('voyager.dashboard'));
+             ->seePageIs(url('/admin/dashboard'));
     }
 
     public function testShowAnErrorMessageWhenITryToLoginWithWrongCredentials()
@@ -33,7 +33,7 @@ class LoginTest extends TestCase
         Auth::loginUsingId(1);
 
         $this->visit(route('voyager.login'))
-             ->seePageIs(route('voyager.dashboard'));
+             ->seePageIs(url('/admin/dashboard'));
     }
 
     public function testRedirectIfNotLoggedIn()
@@ -46,7 +46,7 @@ class LoginTest extends TestCase
     {
         Auth::loginUsingId(1);
 
-        $this->visit(route('voyager.dashboard'))
+        $this->visit(url('/admin/dashboard'))
              ->press(__('voyager::generic.logout'))
              ->seePageIs(route('voyager.login'));
     }

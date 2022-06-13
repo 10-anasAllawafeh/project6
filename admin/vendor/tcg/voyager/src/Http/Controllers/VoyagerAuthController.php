@@ -14,7 +14,7 @@ class VoyagerAuthController extends Controller
     public function login()
     {
         if ($this->guard()->user()) {
-            return redirect()->route('voyager.dashboard');
+            return redirect()->url('/admin/dashboard');
         }
 
         return Voyager::view('voyager::login');
@@ -52,7 +52,7 @@ class VoyagerAuthController extends Controller
      */
     public function redirectTo()
     {
-        return config('voyager.user.redirect', route('voyager.dashboard'));
+        return config('voyager.user.redirect', url('/admin/dashboard'));
     }
 
     /**

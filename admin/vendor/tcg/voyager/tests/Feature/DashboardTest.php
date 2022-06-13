@@ -26,7 +26,7 @@ class DashboardTest extends TestCase
         // We must first login and visit the dashboard page.
         Auth::loginUsingId(1);
 
-        $this->visit(route('voyager.dashboard'))
+        $this->visit(url('/admin/dashboard'))
             ->see(__('voyager::generic.dashboard'));
 
         // Test UserDimmer widget
@@ -34,21 +34,21 @@ class DashboardTest extends TestCase
              ->click(__('voyager::dimmer.user_link_text'))
              ->seePageIs(route('voyager.users.index'))
              ->click(__('voyager::generic.dashboard'))
-             ->seePageIs(route('voyager.dashboard'));
+             ->seePageIs(url('/admin/dashboard'));
 
         // Test PostDimmer widget
         $this->see(trans_choice('voyager::dimmer.post', 4))
              ->click(__('voyager::dimmer.post_link_text'))
              ->seePageIs(route('voyager.posts.index'))
              ->click(__('voyager::generic.dashboard'))
-             ->seePageIs(route('voyager.dashboard'));
+             ->seePageIs(url('/admin/dashboard'));
 
         // Test PageDimmer widget
         $this->see(trans_choice('voyager::dimmer.page', 1))
              ->click(__('voyager::dimmer.page_link_text'))
              ->seePageIs(route('voyager.pages.index'))
              ->click(__('voyager::generic.dashboard'))
-             ->seePageIs(route('voyager.dashboard'))
+             ->seePageIs(url('/admin/dashboard'))
              ->see(__('voyager::generic.dashboard'));
     }
 
@@ -65,7 +65,7 @@ class DashboardTest extends TestCase
             $user->role->permissions()->where('key', 'browse_users')->first()
         );
 
-        $this->visit(route('voyager.dashboard'))
+        $this->visit(url('/admin/dashboard'))
             ->see(__('voyager::generic.dashboard'));
 
         // Test UserDimmer widget
@@ -86,7 +86,7 @@ class DashboardTest extends TestCase
             $user->role->permissions()->where('key', 'browse_posts')->first()
         );
 
-        $this->visit(route('voyager.dashboard'))
+        $this->visit(url('/admin/dashboard'))
             ->see(__('voyager::generic.dashboard'));
 
         // Test PostDimmer widget
@@ -107,7 +107,7 @@ class DashboardTest extends TestCase
             $user->role->permissions()->where('key', 'browse_pages')->first()
         );
 
-        $this->visit(route('voyager.dashboard'))
+        $this->visit(url('/admin/dashboard'))
             ->see(__('voyager::generic.dashboard'));
 
         // Test PageDimmer widget
@@ -125,7 +125,7 @@ class DashboardTest extends TestCase
         // We must first login and visit the dashboard page.
         Auth::loginUsingId(1);
 
-        $this->visit(route('voyager.dashboard'))
+        $this->visit(url('/admin/dashboard'))
              ->see(Voyager::getVersion());
     }
 }

@@ -19,7 +19,7 @@ class RouteTest extends TestCase
         $this->press(__('voyager::generic.login'));
 
         $urls = [
-            route('voyager.dashboard'),
+            url('/admin/dashboard'),
             route('voyager.media.index'),
             route('voyager.settings.index'),
             route('voyager.roles.index'),

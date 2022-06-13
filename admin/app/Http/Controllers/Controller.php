@@ -52,4 +52,8 @@ class Controller extends BaseController
             return redirect('/admin/approve')->with('message','No Applications found');
         }
     }
+
+    public function dashboard(){
+        return view('dashboard');
+    }
 }
