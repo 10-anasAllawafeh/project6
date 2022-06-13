@@ -19,6 +19,11 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    public function home(){
+        $data= post::all();
+        return view('welcome', compact('data'));
+    }
+
     public function storeImage(Request $request){
 
         if($request->file('image')){
@@ -93,5 +98,21 @@ class Controller extends BaseController
             $message->from('greenland@support.com');
             $message->subject('Subscribe to Newsletter');});
             return redirect('/')->with('message','You subscribed to our newsletter successfully');
+    }
+
+    //contact function
+    public function contact(Request $request){
+        $data = [
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'subject' => $request->input('name'),
+            'message' => $request->input('message'),
+        ];
+        mail::send('mail.contact', $data,function($message) use($data){
+            $message->to('anasq0q@gmail.com');
+            $message->from($data['email']);
+            $message->subject($data['subject']);
+        });
+        return redirect('/contact')->with('message', 'Thank you for contacting us, we will respond to you soon');
     }
 }

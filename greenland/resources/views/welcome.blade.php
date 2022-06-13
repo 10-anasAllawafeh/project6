@@ -102,72 +102,43 @@
     {{-- <!-- Facts End --> --}}
 
 
-    {{-- <!-- Courses Start --> --}}
+    {{-- <!-- services Start --> --}}
     <div class="container-xxl courses my-6 py-6 pb-0">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <h6 class="text-dark text-uppercase mb-2">Our Services</h6>
-                <h1 class="display-6 mb-4">Our Courses Upskill You With Driving Training</h1>
+                <h1 class="display-6 mb-4">Our services increase the life quality of humans</h1>
             </div>
             <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="courses-item d-flex flex-column bg-white overflow-hidden h-100">
-                        <div class="text-center p-4 pt-0">
-                            <h5 class="mb-3 mt-5">Automatic Car Lessons</h5>
-                            <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
-                            <ol class="breadcrumb justify-content-center mb-0">
-                                <li class="breadcrumb-item small"><i class="fa fa-signal text-primary me-2"></i>Beginner</li>
-                                <li class="breadcrumb-item small"><i class="fa fa-calendar-alt text-primary me-2"></i>3 Week</li>
-                            </ol>
-                        </div>
-                        <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="img/courses-1.jpg" alt="">
-                            <div class="courses-overlay">
-                                <a class="btn btn-outline-primary border-2" href="">Read More</a>
+                        @foreach ($data as $item)
+                        @if($item['id'] < 3)
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="courses-item d-flex flex-column bg-light overflow-hidden h-100">
+                                <div class="text-center p-4 pt-0">
+                                    <div class="d-inline-block bg-primary text-white fs-5 py-1 px-4 mb-4">{{$item['city']}}</div>
+                                    <h5 class="mb-3">{{$item['title']}}</h5>
+                                    <p>{{$item['excerpt']}}</p>
+                                    <ol class="breadcrumb justify-content-center mb-0">
+                                        <li class="breadcrumb-item small"><i class="fa fa-calendar-alt text-primary me-2"></i>from {{$item['start_time']}}</li>
+                                        <li class="breadcrumb-item small"><i class="fa fa-calendar-alt text-primary me-2"></i>To {{$item['end_time']}}</li>
+                                    </ol>
+                                </div>
+                                <div class="position-relative mt-auto">
+                                    <img class="img-fluid" src="img/{{$item['image']}}" alt="service image">
+                                    {{-- @if (route('login')) --}}
+                                    <div class="hidden courses-overlay">
+                                        <a class="btn btn-outline-primary border-2" href="/services}}">Read more</a> 
+                                    </div>
+                                    {{-- @endif --}}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="courses-item d-flex flex-column bg-white overflow-hidden h-100">
-                        <div class="text-center p-4 pt-0">
-                            <h5 class="mb-3 mt-5">Highway Driving Lesson</h5>
-                            <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
-                            <ol class="breadcrumb justify-content-center mb-0">
-                                <li class="breadcrumb-item small"><i class="fa fa-signal text-primary me-2"></i>Beginner</li>
-                                <li class="breadcrumb-item small"><i class="fa fa-calendar-alt text-primary me-2"></i>3 Week</li>
-                            </ol>
-                        </div>
-                        <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="img/courses-2.jpg" alt="">
-                            <div class="courses-overlay">
-                                <a class="btn btn-outline-primary border-2" href="">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="courses-item d-flex flex-column bg-white overflow-hidden h-100">
-                        <div class="text-center p-4 pt-0">
-                            <h5 class="mb-3 mt-5">International Driving</h5>
-                            <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
-                            <ol class="breadcrumb justify-content-center mb-0">
-                                <li class="breadcrumb-item small"><i class="fa fa-signal text-primary me-2"></i>Beginner</li>
-                                <li class="breadcrumb-item small"><i class="fa fa-calendar-alt text-primary me-2"></i>3 Week</li>
-                            </ol>
-                        </div>
-                        <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="img/courses-3.jpg" alt="">
-                            <div class="courses-overlay">
-                                <a class="btn btn-outline-primary border-2" href="">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        @endif
+                    @endforeach
             </div>
         </div>
     </div>
-    {{-- <!-- Courses End --> --}}
+    {{-- <!-- services End --> --}}
 
 
     {{-- <!-- Testimonial Start --> --}}

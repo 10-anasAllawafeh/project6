@@ -1,6 +1,13 @@
 @extends('layouts/master')
 
 @section('content')
+    <div class=" mt-3 text-dark px-3" style="font-size: 30px">
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
+    </div>
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
         <div class="container text-center">
@@ -36,25 +43,25 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-0 bg-light" id="name" placeholder="Your Name">
+                                    <input type="text" class="form-control border-0 bg-light" id="name" placeholder="Your Name" name="name">
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control border-0 bg-light" id="email" placeholder="Your Email">
+                                    <input type="email" class="form-control border-0 bg-light" id="email" placeholder="Your Email" name="email">
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-0 bg-light" id="subject" placeholder="Subject">
+                                    <input type="text" class="form-control border-0 bg-light" id="subject" placeholder="Subject" name="subject">
                                     <label for="subject">Subject</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control border-0 bg-light" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                    <textarea class="form-control border-0 bg-light" placeholder="Leave a message here" id="message" style="height: 150px" name="message"></textarea>
                                     <label for="message">Message</label>
                                 </div>
                             </div>

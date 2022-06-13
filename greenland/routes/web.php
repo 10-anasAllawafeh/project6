@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Controller::class, 'home']);
 Route::get('/about', function () {
     return view('about');
 });
@@ -45,5 +43,7 @@ Route::post('/store-image',[App\Http\Controllers\Controller::class,'storeImage']
 
 
 // sign for newsletter
-
 Route::post('/news', [App\Http\Controllers\Controller::class, 'news']);
+
+// contact us
+Route::post('/contact', [App\Http\Controllers\Controller::class, 'contact']);
