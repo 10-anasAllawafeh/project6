@@ -77,14 +77,15 @@ class Controller extends BaseController
 
     }
 
-    public function news($id){
-        $user= User::find($id);
+    public function news(Request $request){
         $data=[
-            'email' => $user[$id-1]['email'],
+            'name' => 'Sir/Madam',
+            'email' => $request->input('subscribe'),
         ];
-        mail::send('mail.volunteer', $data, function($message) use($data){
+        mail::send('mail.subscribe', $data, function($message) use($data){
             $message->to($data['email']);
+            $message->from('greenland@support.com');
             $message->subject('Subscribe to Newsletter');});
-            return redirect('/services')->with('message','Your Application sent successfully,please wait for admin approval');
+            return redirect('/')->with('message','You subscribed to our newsletter successfully');
     }
 }

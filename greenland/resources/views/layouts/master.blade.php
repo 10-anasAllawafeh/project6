@@ -129,8 +129,9 @@
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-light mb-4">Newsletter</h4>
                     <form action="{{url('/news')}}" method="post">
+                        @csrf
                         <div class="input-group">
-                            <input type="text" class="form-control p-3 border-0" placeholder="Your Email Address">
+                            <input type="text" class="form-control p-3 border-0" placeholder="Your Email Address" name="subscribe">
                             <button class="btn btn-primary">Sign Up</button>
                         </div>
                     </form>

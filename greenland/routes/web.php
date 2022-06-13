@@ -46,4 +46,4 @@ Route::post('/store-image',[App\Http\Controllers\Controller::class,'storeImage']
 
 // sign for newsletter
 
-Route::get('/news', [App\Http\Controllers\Controller::class, 'news']);
+Route::post('/news', [App\Http\Controllers\Controller::class, 'news']);
