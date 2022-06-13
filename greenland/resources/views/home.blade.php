@@ -1,13 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-  @if (session('message'))
-      <div class="alert alert-success" role="alert">
-          {{session('message')}}
-      </div>
-  @endif
-</div>
 <div class=" mt-3 text-dark px-3" style="font-size: 30px">
     @if (session('status'))
         <div class="alert alert-success" role="alert">

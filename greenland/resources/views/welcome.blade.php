@@ -1,9 +1,15 @@
  @extends('layouts/master')
  @section('content')
-    
-
+ <div class="container">
+    @if (session('message'))
+        <div class="alert alert-success" role="alert">
+            {{session('message')}}
+        </div>
+    @endif
+  </div>
             {{-- <!-- Carousel Start --> --}}
     <div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
+        
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">

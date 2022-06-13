@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Voyager;
 
@@ -15,10 +16,13 @@ use TCG\Voyager\Voyager;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/admin');
 });
 
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::get('/admin/approve',[Controller::class, 'render']);
+Route::post('/admin/approve/done',[Controller::class, 'aprrove']);

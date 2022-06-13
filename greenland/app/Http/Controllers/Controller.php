@@ -24,7 +24,7 @@ class Controller extends BaseController
         if($request->file('image')){
             $file= $request->file('image');
             $filename= $file->getClientOriginalName();
-            $file-> move(public_path('public/Img'), $filename);
+            $file-> move(public_path('/Img'), $filename);
             $filename;
         }
         return redirect('/register')->with('filename',$filename);
@@ -52,9 +52,14 @@ class Controller extends BaseController
               return redirect('/volunteer/'.$service_id.'/user/'.$user_id);
     }
     public function volunteer($service_id,$user_id){
+        DB::UPDATE('UPDATE users SET hold=1, service=? WHERE id=?',[$service_id,$user_id]);
+        // $edit= User::find($user_id);
+        // $edit->hold = 1;
+        // $edit-> service = $service_id;
         $posts= post::find($service_id);
         // echo $posts['title'];
         $users= User::all();
+        // dd($users[4]);
         $data = array(
             'name' => $users[$user_id-1]['name'],
             'email' => $users[$user_id-1]['email'],
@@ -72,6 +77,7 @@ class Controller extends BaseController
         $user->email = $request->input('email');
         $user->phone = $request->input('phone');
         $user->city = $request->input('city');
+        $user->avatar = $request->input('av');
         $user->update();
         return redirect('/home')->with('status','data edited Successfully');
 
