@@ -147,7 +147,7 @@
 @extends('layouts.app')
 
 @if (\Session::has('filename'))
-<div class="alert alert-danger">
+<div class="alert alert-success">
     {{\Session::get('filename')}}
 </div>
 @endif

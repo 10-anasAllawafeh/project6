@@ -18,8 +18,8 @@
                 <div class="row g-0">
                     <div class="col-md-4 gradient-custom text-center text-white"
               style="border-top-left-radius: .9rem; border-bottom-left-radius: .9rem;">
-              <img src="{{ Auth::user()->avatar }}"
-                alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+              <img src="img/{{ Auth::user()->avatar }}"
+                alt="Avatar" height="200px" class=" my-5 mx-3" style="width: 200px;" />
               <h5>{{ Auth::user()->name }}</h5>
               <p>Web Designer</p>
               <i class="far fa-edit mb-5"></i>
@@ -28,29 +28,31 @@
                 <div class="card-body p-4">
                   <h6>Information</h6>
                   <hr class="mt-0 mb-4">
-                  <form action="{{url('/edituser/'.Auth::user()->id)}}" method="post">
+                  <form action="/edituser/{{Auth::user()->id}}" method="POST">
+                    @csrf
+                    @method('put')
                   <div class="row pt-1">
                     <div class="col-8 mx-3 mb-3">
                       <h6>User name</h6>
-                      <input type="text" name="" id="" class="form-control form-control-lg rounded" value="{{ Auth::user()->name }}" style="border-radius:5px !important ">
+                      <input type="text" name="name" id="" class="form-control form-control-lg rounded" value="{{ Auth::user()->name }}" style="border-radius:5px !important ">
                     </div>
                   </div>
                   <div class="row pt-1">
                     <div class="col-8 mx-3 mb-3">
                       <h6>Email</h6>
-                      <input type="email" name="" id="" class="form-control form-control-lg rounded" value="{{ Auth::user()->email }}" style="border-radius:5px !important ">
+                      <input type="email" name="email" id="" class="form-control form-control-lg rounded" value="{{ Auth::user()->email }}" style="border-radius:5px !important ">
                     </div>
                   </div>
                   <div class="row pt-1">
                     <div class="col-8 mx-3 mb-3">
                       <h6>phone</h6>
-                      <input type="number" name="" id="" class="form-control form-control-lg " value="{{ Auth::user()->phone }}" style="border-radius:5px !important ">
+                      <input type="number" name="phone" id="" class="form-control form-control-lg " value="{{ Auth::user()->phone }}" style="border-radius:5px !important ">
                     </div>
                   </div>
                   <div class="row pt-1">
                     <div class="col-8 mx-3 mb-3">
                       <h6>city</h6>
-                      <input type="text" name="" id="" class="form-control form-control-lg " value="{{ Auth::user()->city }}" style="border-radius:5px !important ">
+                      <input type="text" name="city" id="" class="form-control form-control-lg " value="{{ Auth::user()->city }}" style="border-radius:5px !important ">
                     </div>
                   </div>
                   <div class="row pt-1">

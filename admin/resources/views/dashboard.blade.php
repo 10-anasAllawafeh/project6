@@ -52,6 +52,31 @@
 
 @section('content')
 
-
+<div class="row ">
+    <div class="card col-lg-4 col-md-6 col-sm-12 mb-3">
+        <img class="card-img-top" height="400px" src="/storage/settings/june2022/volunteers.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">123 Volunteers</h5>
+          <p class="card-text">Our Volunteering participants numbres increasing day after day</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 hrs ago</small></p>
+        </div>
+      </div>
+      <div class="card col-lg-4 col-md-6 col-sm-12 mb-3">
+        <img class="card-img-top" height="400px" src="/storage/settings/june2022/pexels-kaboompics-com-5865.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">17 Services</h5>
+          <p class="card-text">All across the kingdom,we plant hope and beauty</p>
+          <p class="card-text"><small class="text-muted">Last updated 2 days ago</small></p>
+        </div>
+      </div>
+      <div class="card col-lg-4 col-md-6 col-sm-12 mb-3">
+        <img class="card-img-top" height="400px" src="/storage/settings/june2022/volunteer.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">8 certificates</h5>
+          <p class="card-text">Our efforts appriciated by many different institutes</p>
+          <p class="card-text"><small class="text-muted">Last updated 7 months ago</small></p>
+        </div>
+      </div>
+</div>
     
 @endsection

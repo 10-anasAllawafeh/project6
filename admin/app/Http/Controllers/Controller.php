@@ -26,9 +26,9 @@ class Controller extends BaseController
 
         if (empty($calldata)) {
             foreach($callData as $data){
-                if($user = $data->id && $service = $data->service){
+                // dd($data);
+                if($user == $data->id && $service == $data->service){
                     $id=$data->id;
-                    // dd($id);
                     DB::insert('INSERT INTO user_services (user_id,service_id) VALUES (?,?)',[$id,$service]);
                     $rollback= User::find($user);
                     DB::update('UPDATE users SET hold = 0,service="null" WHERE id = ?',[$id]);
@@ -44,12 +44,12 @@ class Controller extends BaseController
                     return redirect('/admin/approve')->with('message','Approved Successfully');
                 }
                 else {
-                    return redirect('/admin/approve')->with('message','Wrong Data input');
+                    // return redirect('/admin/approve')->with('message','Wrong Data input');
                 }
             }
         }
         else{
-            return redirect('/admin/approve')->with('message','No Applications found');
+            return redirect('/admin/approve')->with('message','No Applications with these values found');
         }
     }
 

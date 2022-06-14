@@ -2,9 +2,9 @@
 
 @section('content')
     <div class=" mt-3 text-dark px-3" style="font-size: 30px">
-        @if (session('status'))
+        @if (session('message'))
             <div class="alert alert-success" role="alert">
-                {{ session('status') }}
+                {{ session('message') }}
             </div>
         @endif
     </div>

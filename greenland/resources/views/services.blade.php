@@ -37,7 +37,7 @@
                         <div class="text-center p-4 pt-0">
                             <div class="d-inline-block bg-primary text-white fs-5 py-1 px-4 mb-4">{{$item['city']}}</div>
                             <h5 class="mb-3">{{$item['title']}}</h5>
-                            <p>{{$item['excerpt']}}</p>
+                            <p>{{$item['body']}}</p>
                             <ol class="breadcrumb justify-content-center mb-0">
                                 <li class="breadcrumb-item small"><i class="fa fa-calendar-alt text-primary me-2"></i>from {{$item['start_time']}}</li>
                                 <li class="breadcrumb-item small"><i class="fa fa-calendar-alt text-primary me-2"></i>To {{$item['end_time']}}</li>

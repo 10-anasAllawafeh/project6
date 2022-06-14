@@ -111,7 +111,7 @@
             </div>
             <div class="row g-4 justify-content-center">
                         @foreach ($data as $item)
-                        @if($item['id'] < 3)
+                        @if($item['id'] < 4)
                         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="courses-item d-flex flex-column bg-light overflow-hidden h-100">
                                 <div class="text-center p-4 pt-0">
@@ -145,7 +145,7 @@
     <div class="container-xxl py-6">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="text-dark text-uppercase mb-2">Collaboration</h1>
+                <h1 class="text-dark text-uppercase mb-2">Sponsored by </h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">

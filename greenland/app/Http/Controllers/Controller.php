@@ -64,12 +64,15 @@ class Controller extends BaseController
         $posts= post::find($service_id);
         // echo $posts['title'];
         $users= User::all();
-        // dd($users[4]);
+        // dd($user_id);
         $data = array(
             'name' => $users[$user_id-1]['name'],
+            'user_id' => $users[$user_id-1]['id'],
             'email' => $users[$user_id-1]['email'],
             'phone' => $users[$user_id-1]['phone'],
-            'title' => $posts['title']);
+            'title' => $posts['title'],
+            'service_id' => $posts['id']
+        );
         mail::send('mail.volunteer', $data, function($message) use($data){
         $message->to('anasq0q@gmail.com');
         $message->from($data['email']);
@@ -77,12 +80,13 @@ class Controller extends BaseController
         return redirect('/services')->with('message','Your Application sent successfully,please wait for admin approval');
     }
     public function edituser(Request $request,$id){
+        // dd($id);
         $user= User::find($id);
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->phone = $request->input('phone');
         $user->city = $request->input('city');
-        $user->avatar = $request->input('av');
+        // $user->avatar = $request->input('av');
         $user->update();
         return redirect('/home')->with('status','data edited Successfully');
 
@@ -106,13 +110,14 @@ class Controller extends BaseController
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'subject' => $request->input('name'),
-            'message' => $request->input('message'),
+            'messages' => $request->input('message'),
         ];
         mail::send('mail.contact', $data,function($message) use($data){
             $message->to('anasq0q@gmail.com');
             $message->from($data['email']);
             $message->subject($data['subject']);
         });
+        // dd($data);
         return redirect('/contact')->with('message', 'Thank you for contacting us, we will respond to you soon');
     }
 }

@@ -31,7 +31,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 //edit user data
-Route::put('/edituser/{id})', [App\Http\Controllers\Controller::class, 'edituser']);
+Route::put('/edituser/{id}', [App\Http\Controllers\Controller::class, 'edituser']);
 
 //call service for users
 Route::get('/volunteer/{service_id}', [App\Http\Controllers\Controller::class, 'viewvolunteer'])->middleware('auth');

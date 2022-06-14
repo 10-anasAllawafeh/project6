@@ -26,4 +26,5 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/admin/approve',[Controller::class, 'render']);
 Route::get('/admin/dashboard',[Controller::class, 'dashboard']);
+// Route::get('/admin',[Controller::class, 'dashboard']);
 Route::post('/admin/approve/done',[Controller::class, 'aprrove']);
